@@ -547,8 +547,8 @@ var _background2Png = require("./images/background2.png");
 var _background2PngDefault = parcelHelpers.interopDefault(_background2Png);
 var _player2Png = require("./images/player2.png");
 var _player2PngDefault = parcelHelpers.interopDefault(_player2Png);
-var _donutobstaclePng = require("./images/donutobstacle.png");
-var _donutobstaclePngDefault = parcelHelpers.interopDefault(_donutobstaclePng);
+var _donutstackPng = require("./images/donutstack.png");
+var _donutstackPngDefault = parcelHelpers.interopDefault(_donutstackPng);
 class Game {
     donuts = [];
     constructor(){
@@ -558,7 +558,7 @@ class Game {
         });
         document.body.appendChild(this.pixi.view);
         this.loader = new _pixiJs.Loader();
-        this.loader.add("backgroundTexture", (0, _background2PngDefault.default)).add("donutTexture", (0, _donutobstaclePngDefault.default)).add("playerTexture", (0, _player2PngDefault.default));
+        this.loader.add("backgroundTexture", (0, _background2PngDefault.default)).add("donutTexture", (0, _donutstackPngDefault.default)).add("playerTexture", (0, _player2PngDefault.default));
         this.loader.load(()=>this.doneLoading());
     }
     doneLoading() {
@@ -568,8 +568,8 @@ class Game {
         // this.pixi.stage.addChild(this.interface);
         this.player = new (0, _player.Player)(this, this.loader.resources["playerTexture"].texture);
         this.pixi.stage.addChild(this.player);
-        for(let i = 0; i < 20; i++){
-            let donut = new (0, _donut.Donut)(this, this.loader.resources["donutTexture"].texture, this.loader.resources["eatenTexture"].texture);
+        for(let i = 0; i < 8; i++){
+            let donut = new (0, _donut.Donut)(this, this.loader.resources["donutTexture"].texture, this.loader.resources["donutTexture"].texture);
             this.pixi.stage.addChild(donut);
             this.donuts.push(donut);
         }
@@ -587,7 +587,7 @@ class Game {
     }
 }
 
-},{"pixi.js":"dsYej","./player":"6OTSH","./donut":"6Hibp","./images/background2.png":"9En28","./images/player2.png":"lCzyr","./images/donutobstacle.png":"91kmo","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dsYej":[function(require,module,exports) {
+},{"pixi.js":"dsYej","./player":"6OTSH","./donut":"6Hibp","./images/background2.png":"9En28","./images/player2.png":"lCzyr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./images/donutstack.png":"7etgQ"}],"dsYej":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "utils", ()=>_utils);
@@ -38593,7 +38593,6 @@ class Player extends _pixiJs.Sprite {
                     console.log("jumped");
                     this.jumpy = this.jumpHeight;
                     this.yspeed = -2;
-                    break;
                 }
         }
     }
@@ -38671,8 +38670,8 @@ exports.getOrigin = getOrigin;
 },{}],"lCzyr":[function(require,module,exports) {
 module.exports = require("./helpers/bundle-url").getBundleURL("jcCUn") + "player2.c27596db.png" + "?" + Date.now();
 
-},{"./helpers/bundle-url":"lgJ39"}],"91kmo":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("jcCUn") + "donutobstacle.4dfbc014.png" + "?" + Date.now();
+},{"./helpers/bundle-url":"lgJ39"}],"7etgQ":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("jcCUn") + "donutstack.42eac7dc.png" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"lgJ39"}]},["ex6hv","h7u1C"], "h7u1C", "parcelRequire1bc5")
 

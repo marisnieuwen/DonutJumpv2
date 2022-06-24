@@ -4,7 +4,7 @@ import { Donut } from "./donut";
 
 import bgtexture from "./images/background2.png";
 import playerImage from "./images/player2.png";
-import donutImage from "./images/donutobstacle.png";
+import donutImage from "./images/donutstack.png";
 
 export class Game {
     public pixi: PIXI.Application;
@@ -41,11 +41,11 @@ export class Game {
           );
           this.pixi.stage.addChild(this.player);
 
-          for (let i = 0; i < 20; i++) {
-            let donut = new Donut(
+          for (let i = 0; i < 8; i++) {
+            let donut = new Donut (
               this,
               this.loader.resources["donutTexture"].texture!,
-              this.loader.resources["eatenTexture"].texture!
+              this.loader.resources["donutTexture"].texture!
             );
             this.pixi.stage.addChild(donut);
             this.donuts.push(donut);

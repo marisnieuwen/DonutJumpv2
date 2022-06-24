@@ -66,7 +66,6 @@ export class Player extends PIXI.Sprite {
                     console.log("jumped")
                     this.jumpy = this.jumpHeight
                     this.yspeed = -2
-                break
                 }
         }
     }
